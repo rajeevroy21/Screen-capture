@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎥 Screen Capture Web App
 
-## Getting Started
+A **browser-based screen recording web application** built with **Next.js** that enables users to record, trim, store, and share screen recordings directly from the browser—no extensions required.
 
-First, run the development server:
+🔗 **Live Demo:** https://screen-capture-xi.vercel.app
+🔗 **Live Demo:** https://github.com/rajeevroy21/Screen-capture
+![alt text](image.png)
+![alt text](image-1.png)
+![alt text](image-2.png)
+![alt text](image-3.png)
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- 📺 Record entire screen, application window, or browser tab
+- 🎙️ Optional audio recording (system/microphone)
+- ⏺️ Start / stop recording with a clean and intuitive UI
+- ✂️ Trim recorded videos before saving or sharing
+- ☁️ Store recording metadata using Supabase
+- 👁️ Track view counts for each shared video
+- 🔗 Generate shareable public video links
+- 🌐 Fully browser-based (no plugins or extensions)
+- ⚡ Fast, lightweight, and secure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Tech Stack
 
-## Learn More
+- **Frontend:** Next.js (App Router), TypeScript
+- **Styling:** Tailwind Css
+- **Browser APIs:** MediaDevices & MediaRecorder
+- **Backend & Storage:** Supabase
+- **Database:** PostgreSQL (Supabase)
+- **Deployment:** Vercel
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🧠 Supabase Usage
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This project uses **Supabase** as the backend platform to handle:
 
-## Deploy on Vercel
+- 📦 Storage of recording metadata (title, duration, timestamps)
+- 👁️ View count tracking for shared recordings
+- 🔗 Management of shareable video links
+- 🗄️ PostgreSQL-based scalable database schema
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

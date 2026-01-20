@@ -4,28 +4,27 @@ import { useState, useRef, useCallback, useEffect } from "react";
 type PipelineStatus = "idle" | "recording" | "processing" | "ready" | "error";
 
 export default function VideoPipeline() {
-  // --- State ---
+  //State
   const [status, setStatus] = useState<PipelineStatus>("idle");
   const [videoUrl, setVideoUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
-  // --- Refs for Media Handling ---
+  //Refs for Media Handling
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const chunksRef = useRef<Blob[]>([]);
 
-  // --- Logic: Start Capture ---
+  //Logic: Start Capture
   const startRecording = useCallback(async () => {
     setError(null);
-    chunksRef.current = []; // Clear previous data
+    chunksRef.current = [];
     
     try {
-      // Requests Screen Capture + System Audio
       const stream = await navigator.mediaDevices.getDisplayMedia({
         video: { frameRate: { ideal: 30 } },
         audio: true
       });
 
-      // Standard Web MediaRecorder API
+      //Standard Web MediaRecorder API
       const recorder = new MediaRecorder(stream, { 
         mimeType: 'video/webm;codecs=vp9' 
       });
@@ -54,7 +53,7 @@ export default function VideoPipeline() {
     }
   }, []);
 
-  // --- Logic: Stop Capture ---
+  //Logic: Stop Capture ---
   const stopRecording = useCallback(() => {
     if (mediaRecorderRef.current && status === "recording") {
       setStatus("processing");
@@ -62,9 +61,9 @@ export default function VideoPipeline() {
     }
   }, [status]);
 
-  // --- Logic: Reset ---
+  //Logic: Reset
   const resetPipeline = () => {
-    if (videoUrl) URL.revokeObjectURL(videoUrl); // Memory management
+    if (videoUrl) URL.revokeObjectURL(videoUrl);
     setVideoUrl(null);
     setStatus("idle");
     setError(null);

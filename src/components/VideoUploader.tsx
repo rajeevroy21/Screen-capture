@@ -73,15 +73,21 @@ export function VideoUploader({
       />
 
       <div className="space-y-4">
-        <div className="space-y-2">
-          <label className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
-            Video Title
-          </label>
+      <div className="space-y-2">
+        <label className="text-sm font-medium text-white">
+          Video Title
+        </label>
           <Input
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="Enter a title for your video"
             disabled={isUploading}
+            className="bg-transparent
+             text-white
+            placeholder:text-gray-400
+            border border-gray-600
+            focus:border-white
+            focus:ring-0"
           />
         </div>
 
