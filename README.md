@@ -2,7 +2,7 @@
 
 A **browser-based screen recording web application** built with **Next.js** that enables users to record, trim, store, and share screen recordings directly from the browser—no extensions required.
 
--  **Live Demo:** https://screen-capture-xi.vercel.app 
+- **Live Demo:** https://screen-capture-xi.vercel.app 
 - **Live Demo:** https://github.com/rajeevroy21/Screen-capture
 ![alt text](image.png)
 ![alt text](image-1.png)
